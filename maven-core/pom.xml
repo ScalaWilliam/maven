@@ -181,6 +181,19 @@ under the License.
       <artifactId>plexus-testing</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- ScalaTest -->
+    <dependency>
+      <groupId>org.scalatestplus</groupId>
+      <artifactId>junit-5-9_3</artifactId>
+      <version>3.2.16.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_3</artifactId>
+      <version>3.2.16</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -207,6 +220,21 @@ under the License.
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>4.8.1</version>
+        <configuration>
+          <scalaVersion>3.3.0</scalaVersion>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.eclipse.sisu</groupId>
         <artifactId>sisu-maven-plugin</artifactId>
